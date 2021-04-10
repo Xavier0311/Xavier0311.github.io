@@ -2,7 +2,88 @@
 <html>
 <head>
 
-<title>Examples</title>
+    <title>我国医院科室设置</title>
+    <script type="application/ld+json">
+    {
+      "@context": ["https://schema.org", {"csvw": "http://www.w3.org/ns/csvw#"}],
+      "@type": "Dataset",
+      "name":"我国医院科室设置",
+      "description": "截止2020年，深圳、四川、山东、浙江和贵州医疗机构科室设置信息，包括：医疗机构代码、医疗机构名称、科室名称、主任姓名、医生数量、出诊医生数量、床位数、主任医师数、副主任医生数、主治医生数",
+      "publisher": {
+        "@type": "Organization",
+        "name": "GitHub"
+      },
+      "license" : "None",
+      "creator":{
+        "@type":"Person",
+        "name": "Lee"
+      },
+      "mainEntity" : {
+        "@type" : "csvw:Table",
+ "dc:title": "医院科室设置",
+ "dc:description": "深圳、四川、山东、浙江和贵州医院科室设置情况，包括：医疗机构代码、医疗机构名称、科室名称、主任姓名、医生数量、出诊医生数量、床位数、主任医师数、副主任医生数、主治医生数",
+ "dct:publish": {"@type": "Organization","name":"DMLU"},
+ "csvw:dialect": {
+    "delimiter": ",",
+    "csvw:headerRowCount":1
+  },
+ "csvw:encoding": "gb2312",
+ "csvw:name": "yi-yuan-ke-shi-she-zhi-1",
+ "csvw:url": "http://example.org/yiliao/医院科室设置.csv",
+ "csvw:schema": {
+              "csvw:aboutUrl": "http://example.org/Hospital_Department/{KSID}",
+              "csvw:columns": [{"csvw:title": "科室代码", "name": "KSID", 
+                        "csvw:datatype": "integer",
+                        "csvw:description": "A code for a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:KSID"},
+                       {"csvw:title": "医疗机构代码", "csvw:name": "Hospital_ID", 
+                        "csvw:datatype": "integer",
+                        "csvw:description": "A code for hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:Hospital_ID"},
+                       {"csvw:title": "医疗机构名称", "name": "Hospital_NAME", 
+                        "csvw:datatype": "string",
+                        "csvw:description": "Name for hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:Hospital_NAME"},
+                       {"csvw:title": "科室名称", "name": "DEP_NAME", "csvw:datatype": "string",
+                        "csvw:description": "Name of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:DEP_NAME"},
+                       {"csvw:title": "主任姓名", "name": "DIRECTOR", "csvw:datatype": "string",
+                        "csvw:description": "Director's name of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:DIRECTOR"},
+                       {"csvw:title": "医生数量", "name": "DOCNUM", 
+                        "csvw:datatype": {"csvw:base": "integer", "csvw:minimum": "0"},
+                        "csvw:description": "Doctors' number of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:DOCNUM"},
+                       {"csvw:title": "出诊医生数量", "csvw:name": "SDOCNUM", 
+                        "csvw:datatype": {"csvw:base": "integer", "csvw:minimum": "0"},
+                        "csvw:description": "Visiting Doctors' number of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:SDOCNUM"},
+                       {"csvw:title": "床位数", "csvw:name": "BEDNUM", 
+                        "csvw:datatype": {"csvw:base": "integer", "csvw:minimum": "0"},
+                        "csvw:description": "Bed number of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:BEDNUM"},
+                       {"csvw:title": "主任医师数", "csvw:name": "CPNUM", 
+                        "csvw:datatype": {"csvw:base": "integer", "csvw:minimum": "0"},
+                        "csvw:description": "Chief Doctors' number of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:CPNUM"},
+                       {"csvw:title": "副主任医师数", "csvw:name": "DCPNUM", 
+                        "csvw:datatype": {"csvw:base": "integer", "csvw:minimum": "0"},
+                        "csvw:description": "Deputy Chief Doctors' number of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:DCPNUM"},
+                       {"csvw:title": "主治医生数", "csvw:name": "APNUM", 
+                        "csvw:datatype": {"csvw:base": "integer", "csvw:minimum": "0"},
+                        "csvw:description": "Attending Doctors' number of a department of hospital.",
+                        "csvw:propertyUrl": "OntoYiliao:APNUM"},
+                       {"virtual": true, "propertyUrl": "rdf:type", "valueUrl": "schema:Country"}],
+              "rowTitles": [],
+              "foreignKeys": [{"fields": ["hospital_ID"],
+                             "reference": {"fields": ["hospital_ID"],
+                                           "resource": "http://example.org/yiliao/医院基本信息.csv"}}],
+              "primaryKey": "KSID"}
+        }
+      }
+    }
+    </script>
 
 <link href="css/tabulator.min.css" rel="stylesheet">
 <script type="text/javascript" src="js/tabulator.min.js"></script>
